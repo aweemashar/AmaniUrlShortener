@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: ./url_shortener_project
+    ports:
+      - "8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+    environment:
+      - DEBUG=True
+    volumes:
+      - ./url_shortener_project:/app
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: url_shortener_db
+      POSTGRES_USER: url_shortener_user
+      POSTGRES_PASSWORD: your_password

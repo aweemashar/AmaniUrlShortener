@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "9fd23e9a-c39f-4612-8a7a-176d3b3a5e3d",
+		"name": "Amani URL Shortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19306960"
+	},
+	"item": [
+		{
+			"name": "Short URL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"url\":\"https://gist.github.com/ahmad-amaniai/19d8f7e5c12cc2c4a3164b7c8da7c224\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/urlshortener/create_short_url/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"urlshortener",
+						"create_short_url",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Original URL",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"url\":\"https://gist.github.com/ahmad-amaniai/19d8f7e5c12cc2c4a3164b7c8da7c224\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/urlshortener/get_original_url/https://tinyurl.com/ywqgzlmq",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"urlshortener",
+						"get_original_url",
+						"https:",
+						"",
+						"tinyurl.com",
+						"ywqgzlmq"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
